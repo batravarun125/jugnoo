@@ -107,7 +107,7 @@ def makeQuoteFile():
 
 def maintainQuoteFile():
     """
-    Maintain the quotes in the text file.
+    Maintain the quotes in the text file. This function is not being used but can be used/modified yo add more logic on how to handle thw quotes file
 
        Extended description of function.
 
