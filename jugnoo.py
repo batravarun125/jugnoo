@@ -65,7 +65,8 @@ def convertQuoteToImage():
     y_text = 100
     # used to break long quote into multiple lines so as to dynamcally ensure that it NEVER crosses the boundary of the image created
     for l in lines:
-        print(l)
+        #print(l)
+        #get each line of quote ad add it to image in a center aligned format
         f, height = font.getsize(l)
         draw.text(((w - f) / 2, y_text), l, font=font)
         y_text += height
@@ -123,7 +124,7 @@ def maintainQuoteFile():
                                 "Accept": "application/json"
                             }
                             )
-    print(response.content)
+    #print(response.content)
     data = response.json()
     with open(QUOTE_FILE_PATH, "r") as f2:
         content = f2.readlines()
@@ -153,7 +154,7 @@ def postImageOnFacebook(img):
 
     oauth_access_token = get_fb_token()
     graph = facebook.GraphAPI(oauth_access_token)
-    #graph = facebook.GraphAPI('EAACEdEose0cBAJYXYKRO0FZAqqZCBGvpoQfUoMHec8ux2uuVkzEfKAqZAVjRhZCeZB38BnZBp8ecRD3CI5curDqHmZAKZBtZCWZCFClJo8w52HFreUXkZCgXoLcjqP12gRzKL0Ya2ERrYr0WEq0mKZC0VeVXszriJMeHTILruIUjUZAfRk1LcahhgHQZBJZAJQh4Eie4kwZD')
+    #graph = facebook.GraphAPI('TO TEST IT , HERE ENTER THE USER ACCESS TOKEN FROM GRAPH API EXPLORER with publish_action permission ')
     graph.put_photo(image=img, message='Look at this cool photo!')
     return
 
