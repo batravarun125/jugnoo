@@ -1,0 +1,15 @@
+Clone the code, then run the jugnoo.py file from terminal using the command pyhton3 jugnoo.py
+
+VIDEO LINK : https://drive.google.com/open?id=0B01m1MFJZIx6UHFaM0NtUDVBX00
+This video file shows how I am testing the API.
+
+When I run my python file, it says that the access token is not correct, this is because I have not granted the permissions to my facebook APP to do so as it requires multiple reviews from facebook and they approve or reject it. 
+
+So, I open the https://developers.facebook.com/tools/explorer/ and here get an access token for me by giving it the publish_actions permissions specially. Then I submit and copy the token to my python script.
+
+As I ca see that after this I get no error.
+
+Then I open my facebook account and I can see the various posts over there. There is a post by Graph Api Explorer which is called through my API and I see that there is a post "Just Now"
+
+This shows the successful testing once I have generated the access token.
+In the code  get_fb_token() function does this part once my app is allowed by facebook to ask for publish_actions permissions from the user while logging in (The app is allowed by facebook once we suplly enough proofs that it is not a fake app, this has nothing to do with coding effort)
