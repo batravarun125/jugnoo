@@ -1,5 +1,5 @@
 import PIL as pillow
-from PIL import ImageFont, Image, ImageDraw
+from PIL import ImageFont, Image, ImageDraw,ImageOps
 
 import facebook
 import requests
@@ -73,6 +73,8 @@ def convertQuoteToImage():
     source_img.paste(img, (0, 0))
     # save in new file
     img.save(OUTPUT_PATH, "JPEG")
+    tempImg=ImageOps.expand(Image.open(OUTPUT_PATH), border=30, fill='yellow')
+    tempImg.save(OUTPUT_PATH)
     image = open(OUTPUT_PATH, 'rb')
     return image
 
