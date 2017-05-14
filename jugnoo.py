@@ -10,6 +10,19 @@ from settings import FACEBOOK_SECRET_KEY, FACEBOOK_APP_ID, FB_ACCESS_TOKEN_URL, 
 
 
 def get_fb_token():
+    """
+            Generate a FB access token for a user to allow publish_action permission to allow the facebook app with FACEBOOK_APP_ID as app id to post on his wall after the user grants permissions
+
+               Extended description of function.
+
+                  Parameters
+                       ----------
+
+                  Returns
+                       -------
+                       ACCESS TOKEN
+                           It uses the FACEBOOK_SECRET_KEY and FACEBOOK_APP_ID to ask the user for an access token to post on his behalf and returns the access token
+    """
     client_secret = FACEBOOK_SECRET_KEY
     app_id = FACEBOOK_APP_ID
     payload = {'grant_type': 'client_credentials', 'client_id': app_id, 'client_secret': client_secret}
@@ -139,8 +152,8 @@ def postImageOnFacebook(img):
     """
 
     oauth_access_token = get_fb_token()
-    #graph = facebook.GraphAPI(oauth_access_token)
-    graph = facebook.GraphAPI('EAACEdEose0cBAJYXYKRO0FZAqqZCBGvpoQfUoMHec8ux2uuVkzEfKAqZAVjRhZCeZB38BnZBp8ecRD3CI5curDqHmZAKZBtZCWZCFClJo8w52HFreUXkZCgXoLcjqP12gRzKL0Ya2ERrYr0WEq0mKZC0VeVXszriJMeHTILruIUjUZAfRk1LcahhgHQZBJZAJQh4Eie4kwZD')
+    graph = facebook.GraphAPI(oauth_access_token)
+    #graph = facebook.GraphAPI('EAACEdEose0cBAJYXYKRO0FZAqqZCBGvpoQfUoMHec8ux2uuVkzEfKAqZAVjRhZCeZB38BnZBp8ecRD3CI5curDqHmZAKZBtZCWZCFClJo8w52HFreUXkZCgXoLcjqP12gRzKL0Ya2ERrYr0WEq0mKZC0VeVXszriJMeHTILruIUjUZAfRk1LcahhgHQZBJZAJQh4Eie4kwZD')
     graph.put_photo(image=img, message='Look at this cool photo!')
     return
 
@@ -161,7 +174,7 @@ def postContentAsImage():
 
     """
     # maintainQuoteFile()
-    makeQuoteFile()
+    #makeQuoteFile()
     img = convertQuoteToImage()
     postImageOnFacebook(img)
 
