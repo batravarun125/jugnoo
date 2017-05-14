@@ -139,8 +139,8 @@ def postImageOnFacebook(img):
     """
 
     oauth_access_token = get_fb_token()
-    graph = facebook.GraphAPI(oauth_access_token)
-    #graph = facebook.GraphAPI('EAACEdEose0cBAJYXYKRO0FZAqqZCBGvpoQfUoMHec8ux2uuVkzEfKAqZAVjRhZCeZB38BnZBp8ecRD3CI5curDqHmZAKZBtZCWZCFClJo8w52HFreUXkZCgXoLcjqP12gRzKL0Ya2ERrYr0WEq0mKZC0VeVXszriJMeHTILruIUjUZAfRk1LcahhgHQZBJZAJQh4Eie4kwZD')
+    #graph = facebook.GraphAPI(oauth_access_token)
+    graph = facebook.GraphAPI('EAACEdEose0cBAJYXYKRO0FZAqqZCBGvpoQfUoMHec8ux2uuVkzEfKAqZAVjRhZCeZB38BnZBp8ecRD3CI5curDqHmZAKZBtZCWZCFClJo8w52HFreUXkZCgXoLcjqP12gRzKL0Ya2ERrYr0WEq0mKZC0VeVXszriJMeHTILruIUjUZAfRk1LcahhgHQZBJZAJQh4Eie4kwZD')
     graph.put_photo(image=img, message='Look at this cool photo!')
     return
 
@@ -161,7 +161,7 @@ def postContentAsImage():
 
     """
     # maintainQuoteFile()
-    # makeQuoteFile()
+    makeQuoteFile()
     img = convertQuoteToImage()
     postImageOnFacebook(img)
 
