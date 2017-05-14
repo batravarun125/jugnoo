@@ -18,9 +18,9 @@ pip3 install facebook-sdk
 
 pip3 install requests
 
-pip install pillow
+pip3 install pillow
 
-pip install textwrap
+pip3 install textwrap
 
 
 Now go to terminal and go to the path where the file ‘jugnoo.py’ is stored and then run command python3 jugnoo.py
